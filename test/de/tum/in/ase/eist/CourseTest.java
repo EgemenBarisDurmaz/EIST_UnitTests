@@ -1,33 +1,34 @@
 package de.tum.in.ase.eist;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CourseTest {
 
-	// TODO 1: Test getCourseTitle()
+    // TODO 1: Test getCourseTitle()
     @Test
     void testGetCourseTitle() {
-    Course expected = new Course("EIST");
-    String observed = expected.getTitle();
-    assertEquals("EIST", observed);
+        Course expected = new Course("EIST");
+        String observed = expected.getTitle();
+        assertEquals("EIST", observed);
     }
 
-	// TODO 2: Test getNumberOfAttendees()
+    // TODO 2: Test getNumberOfAttendees()
     @Test
     void testNoAttendees() {
         Course course = new Course("EIST");
         List<Student> attendee = new ArrayList<>();
         course.setAttendees(attendee);
-        if(0 != course.getNumberOfAttendees()) {
+        if (0 != course.getNumberOfAttendees()) {
             throw new IllegalArgumentException("Failed");
         }
         //assertEquals(0, course.getAttendees().size());
     }
+
     @Test
     void testThreeAttendees() {
         Course course = new Course("EIST");
@@ -39,7 +40,7 @@ class CourseTest {
         attendee.add(s2);
         attendee.add(s3);
         course.setAttendees(attendee);
-        if(3 != course.getNumberOfAttendees()) {
+        if (3 != course.getNumberOfAttendees()) {
             throw new IllegalArgumentException("Failed");
         }
         //assertEquals(3, course.getAttendees().size());
