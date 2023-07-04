@@ -8,7 +8,7 @@ class CourseTest {
 
 	// TODO 1: Test getCourseTitle()
     @Test
-    void stringtestGetCourseTitle() {
+    void testGetCourseTitle() {
     Course expected = new Course("EIST");
     String observed = expected.getTitle();
     assertEquals("EIST", observed);
