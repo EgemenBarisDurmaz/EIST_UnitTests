@@ -18,9 +18,17 @@ class OnlineCourseTest {
             OnlineCourse onlineCourse = new OnlineCourse("OnlineEIST");
             String url = "http://www.onlineEIST.com";
             onlineCourse.setUrl(url);
-            if(url.equals(onlineCourse.getUrl().toString()))  {
-                throw new IllegalArgumentException("Failed");
+            if(!url.equals(onlineCourse.getUrl().toString()))  {
+                throw new MalformedURLException ("Failed");
             }
         }
-
+    @Test
+    void testSetOnlineCourseUrlWithInvalidUrl() throws MalformedURLException {
+        OnlineCourse onlineCourse = new OnlineCourse("OnlineEIST");
+        String url = "onlineEIST.com";
+        onlineCourse.setUrl(url);
+        if(!url.equals(onlineCourse.getUrl().toString()))  {
+            throw new MalformedURLException ("Failed");
+        }
+    }
 }
