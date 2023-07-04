@@ -27,9 +27,8 @@ class OnlineCourseTest {
         String url = "onlineEIST.com";
         try {
             onlineCourse.setUrl(url);
-            throw new AssertionError("Failed");
         } catch (MalformedURLException e) {
-            // Test passed
+            throw new AssertionError("Failed");
         }
     }
 }
