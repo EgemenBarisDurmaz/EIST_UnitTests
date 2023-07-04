@@ -2,6 +2,9 @@ package de.tum.in.ase.eist;
 
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CourseTest {
@@ -14,7 +17,25 @@ class CourseTest {
     assertEquals("EIST", observed);
     }
 
-
 	// TODO 2: Test getNumberOfAttendees()
-
+    @Test
+    void testNoAttendees() {
+        Course course = new Course("EIST");
+        List<Student> attendee = new ArrayList<>();
+        course.setAttendees(attendee);
+        assertEquals(0, course.getAttendees().size());
+    }
+    @Test
+    void testThreeAttendees() {
+        Course course = new Course("EIST");
+        List<Student> attendee = new ArrayList<>();
+        Student s1 = new Student("Ege", "Dur", "13/03/1990", "Informatik", "BWL");
+        Student s2 = new Student("John", "Sparrow", "1/03/1990", "Informatik", "BWL");
+        Student s3 = new Student("Emma", "Lena", "10/03/1990", "Informatik", "BWL");
+        attendee.add(s1);
+        attendee.add(s2);
+        attendee.add(s3);
+        course.setAttendees(attendee);
+        assertEquals(3, course.getAttendees().size());
+    }
 }
