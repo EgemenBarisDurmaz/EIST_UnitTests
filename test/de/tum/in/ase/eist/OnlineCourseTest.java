@@ -26,9 +26,11 @@ class OnlineCourseTest {
     void testSetOnlineCourseUrlWithInvalidUrl() throws MalformedURLException {
         OnlineCourse onlineCourse = new OnlineCourse("OnlineEIST");
         String url = "onlineEIST.com";
-        onlineCourse.setUrl(url);
-        if(url.equals(onlineCourse.getUrl().toString()))  {
-            throw new MalformedURLException ("Failed");
+        try {
+            onlineCourse.setUrl(url);
+            throw new AssertionError("Failed");
+        } catch (MalformedURLException e) {
+            // Test passed
         }
     }
 }
