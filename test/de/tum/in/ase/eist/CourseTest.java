@@ -39,6 +39,9 @@ class CourseTest {
         attendee.add(s2);
         attendee.add(s3);
         course.setAttendees(attendee);
-        assertEquals(3, course.getAttendees().size());
+        if(3 != course.getAttendees().size()) {
+            throw new IllegalArgumentException("Failed");
+        }
+        //assertEquals(3, course.getAttendees().size());
     }
 }
