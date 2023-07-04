@@ -23,7 +23,10 @@ class CourseTest {
         Course course = new Course("EIST");
         List<Student> attendee = new ArrayList<>();
         course.setAttendees(attendee);
-        assertEquals(0, course.getAttendees().size());
+        if(0 != course.getAttendees().size()) {
+            throw new IllegalArgumentException("Failed");
+        }
+        //assertEquals(0, course.getAttendees().size());
     }
     @Test
     void testThreeAttendees() {

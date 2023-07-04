@@ -7,4 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class OnlineCourseTest {
 
 	// TODO 3: Test setOnlineCourseUrl()
+    @Test
+    void testSetOnlineCourseUrlWithValidUrl() {
+
+    }
 }
