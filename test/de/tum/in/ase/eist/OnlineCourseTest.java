@@ -27,7 +27,7 @@ class OnlineCourseTest {
         OnlineCourse onlineCourse = new OnlineCourse("OnlineEIST");
         String url = "onlineEIST.com";
         onlineCourse.setUrl(url);
-        if(!url.equals(onlineCourse.getUrl().toString()))  {
+        if(url.equals(onlineCourse.getUrl().toString()))  {
             throw new MalformedURLException ("Failed");
         }
     }
